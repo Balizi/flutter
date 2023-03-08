@@ -85,7 +85,7 @@ class Login extends StatelessWidget {
                         height: 17,
                       ),
                       ElevatedButton(
-                        onPressed: () {Navigator.pushNamed(context, "/login");},
+                        onPressed: () {Navigator.pushNamed(context, "/home");},
                         style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(Colors.purple),

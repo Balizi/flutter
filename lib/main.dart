@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplone/pages/home.dart';
 import 'package:simplone/pages/login.dart';
 import 'package:simplone/pages/signup.dart';
 import 'package:simplone/pages/welcome.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => const Welcome(),
         "/login": (context) => const Login(),
         "/signup": (context) => const Signup(),
+        "/home": (context) => Home(),
       },
     );
   }
