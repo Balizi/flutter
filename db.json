@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "mohamed",
+      "lastname": "mohamed",
+      "email": "mohamed@gmail.com",
+      "password":"12345",
+      "age": 30
+    },
+    {
+      "id": 2,
+      "firstname": "adil",
+      "lastname": "mohamed",
+      "email": "adil@gmail.com",
+      "password":"12345",
+      "age": 30
+    },
+    {
+      "id": 3,
+      "firstname": "yassine",
+      "lastname": "mohamed",
+      "email": "yassine@gmail.com",
+      "password":"12345",
+      "age": 30
+    },
+    {
+      "id": 4,
+      "firstname": "chaimae",
+      "lastname": "alami",
+      "email": "chaimae@gmail.com",
+      "password":"12345",
+      "age": 30
+    }
+  ]
+}

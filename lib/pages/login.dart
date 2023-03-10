@@ -1,8 +1,68 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:simplone/pages/home.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget{
+
   const Login({super.key});
+  @override
+  State<Login> createState() => _Login();
+}
+
+class _Login extends State<Login> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  bool isLoading = false;
+  signIn(String email,String password) async{
+    String url = "http://localhost:3000/users";
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    Map body = {"email" : email, "password" : password};
+    var jsonResponse;
+    var res = await http.post(Uri.parse(url), body: body);
+    if(res.statusCode == 200){
+      jsonResponse = json.decode(res.body);
+      print("Response status: ${res.statusCode}");
+      print("Response status: ${res.body}");
+      if(jsonResponse != null){
+        setState(() {
+          isLoading = true;
+        });
+
+        sharedPreferences.setString("token", jsonResponse["token"]);
+
+        Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(builder: (BuildContext context) => Home()),
+          (Route<dynamic> route) => false);
+
+      }
+    }else{
+      setState(() {
+        isLoading = false;
+      });
+      print("Response status: ${res.body}");
+    }
+  }
+
+  logIn(String email,String password) async{
+    String urlGet = "http://localhost:3000/users?email="+email+"&password="+password;
+    String seconde = "http://localhost:3000/users?email="+email+"&password="+password;
+    SharedPreferences sharedPreferences1 = await SharedPreferences.getInstance();
+    var req = await http.get(Uri.parse(seconde));
+    print("dkhlt");
+    if(req.statusCode == 200 && !(json.decode(req.body).isEmpty)){
+    print("hhhh");
+      setState(() {
+        isLoading = true;
+      });
+      Navigator.pushNamed(context, "/home");
+    }
+    else{ return;}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +105,7 @@ class Login extends StatelessWidget {
                         width: 266,
                         padding: EdgeInsets.symmetric(horizontal: 16),
                         child: TextField(
+                          controller: _emailController,
                           decoration: InputDecoration(
                               icon: Icon(
                                 Icons.person,
@@ -67,6 +128,7 @@ class Login extends StatelessWidget {
                         padding: EdgeInsets.symmetric(horizontal: 16),
                         child: TextField(
                           obscureText: true,
+                          controller: _passwordController,
                           decoration: InputDecoration(
                               suffix: Icon(
                                 Icons.visibility,
@@ -85,7 +147,22 @@ class Login extends StatelessWidget {
                         height: 17,
                       ),
                       ElevatedButton(
-                        onPressed: () {Navigator.pushNamed(context, "/home");},
+                        // onPressed: () {Navigator.pushNamed(context, "/home");},
+                        onPressed: (){
+                          if( _emailController.text.isEmpty || _passwordController.text.isEmpty){
+                            return;
+                          }
+                          // setState(() {
+                          //   isLoading = true;
+                          // });
+                          // print("email");
+                          // print(_emailController.text);
+                          // print("password");
+                          // print(_passwordController.text);
+                          // signIn(_emailController.text,_passwordController.text);
+                          logIn(_emailController.text,_passwordController.text);
+                          // Navigator.pushNamed(context, "/home");
+                        },
                         style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(Colors.purple),

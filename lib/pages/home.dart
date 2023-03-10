@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:simplone/pages/brief_list.dart';
+import 'package:simplone/pages/briefs.dart';
+import 'package:simplone/pages/login.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -9,13 +12,26 @@ class Home extends StatefulWidget {
 class _Home extends State<Home> {
   int index = 0;
   final pages = [
-    Center(child: Text('Page 1',style: TextStyle(fontSize: 37))),
-    Center(child: Text('Page 2',style: TextStyle(fontSize: 37))),
+    Center(child: BriefList()),
+    Center(child: Briefs()),
     Center(child: Text('Page 3',style: TextStyle(fontSize: 37))),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        backgroundColor: Color.fromARGB(255, 250, 102, 91),
+        leading: Icon(Icons.menu),
+        title: Text('Hello'),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 25.0),
+            child: Icon(Icons.person),
+          )
+        ],
+      ),
       body:pages[index],
       bottomNavigationBar: NavigationBar(
         selectedIndex: index,
@@ -25,13 +41,13 @@ class _Home extends State<Home> {
           NavigationDestination(
             icon: Icon(Icons.home_outlined),
             selectedIcon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Briefs',
           ),
 
           NavigationDestination(
-            icon: Icon(Icons.category_outlined),
-            selectedIcon: Icon(Icons.category),
-            label: 'Category',
+            icon: Icon(Icons.search),
+            selectedIcon: Icon(Icons.search),
+            label: 'Search',
           ),
 
           NavigationDestination(
