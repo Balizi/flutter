@@ -32,5 +32,31 @@
       "password":"12345",
       "age": 30
     }
+  ],
+  "briefs":[
+    {
+      "title":"title1",
+      "description":"The world is constantly changing, and it can be difficult to keep up with all of the new developments and advancements. From technological innovations to social and political changes, there is always something happening that can impact our lives in significant ways. ",
+      "year":12,
+      "picture":"assets/images/tech1.png"
+    },
+    {
+      "title":"title2",
+      "description":"The world is constantly changing, and it can be difficult to keep up with all of the new developments and advancements. From technological innovations to social and political changes, there is always something happening that can impact our lives in significant ways. ",
+      "year":12,
+      "picture":"assets/images/tech1.png"
+    },
+    {
+      "title":"title3",
+      "description":"The world is constantly changing, and it can be difficult to keep up with all of the new developments and advancements. From technological innovations to social and political changes, there is always something happening that can impact our lives in significant ways. ",
+      "year":12,
+      "picture":"assets/images/tech1.png"
+    },
+    {
+      "title":"title4",
+      "description":"The world is constantly changing, and it can be difficult to keep up with all of the new developments and advancements. From technological innovations to social and political changes, there is always something happening that can impact our lives in significant ways. ",
+      "year":12,
+      "picture":"assets/images/tech1.png"
+    }
   ]
 }

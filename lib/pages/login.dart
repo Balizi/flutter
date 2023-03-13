@@ -53,9 +53,7 @@ class _Login extends State<Login> {
     String seconde = "http://localhost:3000/users?email="+email+"&password="+password;
     SharedPreferences sharedPreferences1 = await SharedPreferences.getInstance();
     var req = await http.get(Uri.parse(seconde));
-    print("dkhlt");
     if(req.statusCode == 200 && !(json.decode(req.body).isEmpty)){
-    print("hhhh");
       setState(() {
         isLoading = true;
       });
