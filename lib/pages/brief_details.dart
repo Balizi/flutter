@@ -17,7 +17,7 @@ class BriefDetails extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 250, 102, 91),
         leading: IconButton( icon : Icon(Icons.arrow_back_rounded), onPressed: (){Navigator.pushNamed(context, "/home");} ),
-        title: Text('Hello'),
+        title: Text('YouCode Safi 2022 Brendan Eich'),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 25.0),
@@ -25,29 +25,42 @@ class BriefDetails extends StatelessWidget {
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(4.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.network(brief.imageUrl),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                brief.year.toString(),
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 17.0, fontStyle: FontStyle.italic),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.network(brief.imageUrl),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  brief.name,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 17.0, fontStyle: FontStyle.italic),
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                brief.description,
-                textAlign: TextAlign.justify,
-                style: TextStyle(fontSize: 22.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Contexte du projet : "+brief.description,
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 22.0),
+                ),
               ),
-            ),
-          ],
+              SizedBox(
+                        height: 35,
+                      ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Modalités pédagogiques : "+brief.modalites,
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 22.0),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

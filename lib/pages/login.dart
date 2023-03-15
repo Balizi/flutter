@@ -48,8 +48,9 @@ class _Login extends State<Login> {
     }
   }
 
+
   logIn(String email,String password) async{
-    String urlGet = "http://localhost:3000/users?email="+email+"&password="+password;
+    // String urlGet = "http://localhost:3000/users?email="+email+"&password="+password;
     String seconde = "http://localhost:3000/users?email="+email+"&password="+password;
     SharedPreferences sharedPreferences1 = await SharedPreferences.getInstance();
     var req = await http.get(Uri.parse(seconde));
@@ -150,16 +151,7 @@ class _Login extends State<Login> {
                           if( _emailController.text.isEmpty || _passwordController.text.isEmpty){
                             return;
                           }
-                          // setState(() {
-                          //   isLoading = true;
-                          // });
-                          // print("email");
-                          // print(_emailController.text);
-                          // print("password");
-                          // print(_passwordController.text);
-                          // signIn(_emailController.text,_passwordController.text);
                           logIn(_emailController.text,_passwordController.text);
-                          // Navigator.pushNamed(context, "/home");
                         },
                         style: ButtonStyle(
                           backgroundColor:

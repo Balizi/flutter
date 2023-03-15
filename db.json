@@ -35,28 +35,36 @@
   ],
   "briefs":[
     {
-      "title":"title1",
-      "description":"The world is constantly changing, and it can be difficult to keep up with all of the new developments and advancements. From technological innovations to social and political changes, there is always something happening that can impact our lives in significant ways. ",
-      "year":12,
-      "picture":"assets/images/tech1.png"
+      "title": "title1",
+      "description": "La société Maghreb Coding school souhaite mettre en place une application mobile afin de facilitez l'acces au resources (brief, rendu, competences)",
+      "year": 12,
+      "picture": "assets/images/br1.jpg",
+      "name": "Application Mobile SimplonLine",
+      "modalites": "Travail Indivuel \nDeadline 27/02/2023"
     },
     {
-      "title":"title2",
-      "description":"The world is constantly changing, and it can be difficult to keep up with all of the new developments and advancements. From technological innovations to social and political changes, there is always something happening that can impact our lives in significant ways. ",
-      "year":12,
-      "picture":"assets/images/tech1.png"
+      "title": "title2",
+      "description": "Outdoor Adventures est un détaillant en ligne spécialisé dans la vente d'équipements et d'équipements pour les activités de plein air telles que le camping, la randonnée et l'escalade. L'entreprise a une large clientèle passionnée qui compte sur elle pour tous leurs besoins en plein air. Pour répondre à la demande croissante de ses produits, Outdoor Adventures a décidé de créer une plate-forme de commerce électronique basée sur des microservices qui peut évoluer rapidement et facilement à mesure que l'entreprise se développe.",
+      "year": 12,
+      "picture": "assets/images/br2.png",
+      "name": "OutDoor",
+      "modalites": "Travail en binôme \nDeadline: 15/02/2023 (8 jours)"
     },
     {
-      "title":"title3",
-      "description":"The world is constantly changing, and it can be difficult to keep up with all of the new developments and advancements. From technological innovations to social and political changes, there is always something happening that can impact our lives in significant ways. ",
-      "year":12,
-      "picture":"assets/images/tech1.png"
+      "title": "title3",
+      "description": "Dans le cadre de la pédagogie active, **YouCode **a besoin d'une application qui gere les CVs des apprenants pour faciliter le passage et la recherche des CVs entre les apprenants, CME et les responsables.après la réalisation de la partie backend nous souhaitons construire la partie frontend qui respecte les règles suivantes :",
+      "year": 12,
+      "picture": "assets/images/br3.png",
+      "name": "CVThèque Angular",
+      "modalites": "Présentation avec des slides sur les principes Angular/Spring boot avec votre réalisation le jour du débriefing Devant toute la classe"
     },
     {
-      "title":"title4",
-      "description":"The world is constantly changing, and it can be difficult to keep up with all of the new developments and advancements. From technological innovations to social and political changes, there is always something happening that can impact our lives in significant ways. ",
-      "year":12,
-      "picture":"assets/images/tech1.png"
+      "title": "title4",
+      "description": "The world is constantly changing, and it can be difficult to keep up with all of the new developments and advancements. From technological innovations to social and political changes, there is always something happening that can impact our lives in significant ways. ",
+      "year": 12,
+      "picture": "assets/images/br4.png",
+      "name": "Projet File Rouge",
+      "modalites": "Travail Individuel\n Début : 01/11/2022\n Deadliné: 31/03/2023"
     }
   ]
 }

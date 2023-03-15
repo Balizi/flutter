@@ -24,7 +24,7 @@ class _Home extends State<Home> {
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 250, 102, 91),
         leading: Icon(Icons.menu),
-        title: Text('Hello'),
+        title: Text('YouCode Safi 2022 Brendan Eich'),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 25.0),

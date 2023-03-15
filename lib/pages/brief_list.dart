@@ -31,6 +31,8 @@ class _BriefList extends State<BriefList> {
         description: singleBrief['description'],
         imageUrl: singleBrief['picture'],
         year: singleBrief['year'],
+        name:singleBrief['name'],
+        modalites:singleBrief['modalites']
       );
       briefs.add(brief);
     }
@@ -64,25 +66,21 @@ class _BriefList extends State<BriefList> {
               return Container(
                 child: Center(
                   child: CircularProgressIndicator(),
-                  
                 ),
               );
             } else {
               return ListView.builder(
                 itemCount: snapshot.data.length,
                 itemBuilder: (ctx, index) => Card(
-                  child:ListTile(
-                    title: Text(snapshot.data[index].title),
-                    subtitle: Text(snapshot.data[index].year.toString()),
-                    leading: Image.asset(snapshot.data[index].imageUrl),
-                    trailing: Icon(Icons.arrow_forward_rounded),
-                     onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => BriefDetails(snapshot.data[index])));
-            },
-                  ) 
-                  // subtitle: Text(snapshot.data[index].body),
-                  // contentPadding: EdgeInsets.only(bottom: 20.0),
-                ),
+                    child: ListTile(
+                  title: Text(snapshot.data[index].name),
+                  subtitle: Text(snapshot.data[index].year.toString()),
+                  leading: Image.asset(snapshot.data[index].imageUrl),
+                  trailing: Icon(Icons.arrow_forward_rounded),
+                  onTap: () {
+                    Navigator.push(context,MaterialPageRoute( builder: (context) => BriefDetails(snapshot.data[index])));
+                  },
+                )),
               );
             }
           },
